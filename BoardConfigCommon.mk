@@ -65,6 +65,9 @@ TARGET_BOARD_PLATFORM := kirin970
 # Recovery
 TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/configs/init/fstab.kirin970
 
+# Releasetools
+TARGET_RELEASETOOLS_EXTENSIONS := $(COMMON_PATH)
+
 # Root
 BOARD_ROOT_EXTRA_FOLDERS += \
     3rdmodem \
