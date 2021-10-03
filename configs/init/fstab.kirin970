@@ -4,13 +4,13 @@
 # specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
 /dev/block/platform/ff3c0000.ufs/by-name/kernel  /boot    emmc   defaults recoveryonly
 /dev/block/platform/ff3c0000.ufs/by-name/recovery_ramdisk  /recovery    emmc   defaults recoveryonly
-/dev/block/platform/ff3c0000.ufs/by-name/system  /system    ext4    ro    wait,avb
-/dev/block/platform/ff3c0000.ufs/by-name/vendor  /vendor ext4    ro    wait,avb
+/dev/block/platform/ff3c0000.ufs/by-name/system  /system    ext4    ro    wait
+/dev/block/platform/ff3c0000.ufs/by-name/vendor  /vendor ext4    ro    wait
 /dev/block/platform/ff3c0000.ufs/by-name/product   /product   ext4    ro    wait
 /dev/block/platform/ff3c0000.ufs/by-name/version   /version   ext4    ro    wait
 /dev/block/platform/ff3c0000.ufs/by-name/cust /cust ext4    ro    wait
 /dev/block/platform/ff3c0000.ufs/by-name/odm     /odm      ext4    ro    wait
-/dev/block/platform/ff3c0000.ufs/by-name/patch     /patch_hw  ext4    ro    wait,verify
+/dev/block/platform/ff3c0000.ufs/by-name/patch     /patch_hw  ext4    ro    wait
 /dev/block/platform/ff3c0000.ufs/by-name/splash2    /splash2   ext4     rw,nosuid,nodev,noatime,data=ordered,context=u:object_r:splash2_data_file:s0 wait,nofail
 /devices/hi_mci.1/mmc_host/mmc1/*                       auto                auto      defaults                                      voldmanaged=sdcard:auto,noemulatedsd
 /devices/platform/hi_mci.1/mmc_host/mmc1/*                       auto                auto      defaults                                      voldmanaged=sdcard:auto,noemulatedsd
