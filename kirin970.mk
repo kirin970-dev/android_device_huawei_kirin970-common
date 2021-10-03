@@ -11,6 +11,10 @@ COMMON_PATH := device/huawei/kirin970-common
 PRODUCT_PACKAGES += \
     libion
 
+# Init
+PRODUCT_PACKAGES += \
+    init.recovery.kirin970.rc
+
 # Media
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_audio.xml \
