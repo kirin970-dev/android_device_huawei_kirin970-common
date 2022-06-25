@@ -1,0 +1,82 @@
+#
+# Copyright (C) 2022 The LineageOS Project
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+## Common Path
+COMMON_PATH := device/huawei/kirin970-common
+
+# Arch
+TARGET_ARCH := arm64
+TARGET_ARCH_VARIANT := armv8-2a
+TARGET_CPU_ABI := arm64-v8a
+TARGET_CPU_VARIANT := cortex-a73
+
+TARGET_2ND_ARCH := arm
+TARGET_2ND_ARCH_VARIANT := armv8-a
+TARGET_2ND_CPU_ABI := armeabi-v7a
+TARGET_2ND_CPU_ABI2 := armeabi
+TARGET_2ND_CPU_VARIANT := cortex-a53
+
+# Bootloader
+TARGET_BOOTLOADER_BOARD_NAME := kirin970
+
+# Filesystem
+BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
+BOARD_ODMIMAGE_FILE_SYSTEM_TYPE := ext4
+BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE := ext4
+BOARD_SYSTEM_EXTIMAGE_FILE_SYSTEM_TYPE := ext4
+BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
+TARGET_COPY_OUT_ODM := odm
+TARGET_COPY_OUT_PRODUCT := product
+TARGET_COPY_OUT_SYSTEM_EXT := system_ext
+TARGET_COPY_OUT_VENDOR := vendor
+TARGET_USERIMAGES_USE_EXT4 := true
+
+# Kernel
+BOARD_KERNEL_BASE := 0x00078000
+BOARD_KERNEL_CMDLINE := loglevel=4 page_tracker=on unmovable_isolate1=2:192M,3:224M,4:256M printktimer=0xfff0a000,0x534,0x538 androidboot.selinux=enforcing
+BOARD_KERNEL_IMAGE_NAME := Image.gz
+BOARD_KERNEL_PAGESIZE := 2048
+BOARD_MKBOOTIMG_ARGS := --header_version 1 --kernel_offset 0x00008000 --ramdisk_offset 0x37588000 --second_offset 0x00e88000 --tags_offset 0x37d88000
+
+# Kernel Source
+TARGET_KERNEL_CONFIG := merge_kirin970_defconfig
+TARGET_KERNEL_SOURCE := kernel/huawei/kirin970
+
+# Partitions
+BOARD_SUPER_PARTITION_SIZE := 5771362304
+BOARD_SUPER_PARTITION_GROUPS := huawei_dynamic_partitions
+BOARD_HUAWEI_DYNAMIC_PARTITIONS_SIZE := 5767362304
+BOARD_HUAWEI_DYNAMIC_PARTITIONS_PARTITION_LIST := odm product system system_ext vendor
+
+BOARD_BOOTIMAGE_PARTITION_SIZE := 25165824
+BOARD_CACHEIMAGE_PARTITION_SIZE := 134217728
+BOARD_RAMDISKIMAGE_PARTITION_SIZE := 2097152
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 33554432
+BOARD_FLASH_BLOCK_SIZE := 4096
+
+# Platform
+TARGET_BOARD_PLATFORM := kirin970
+
+# Root
+BOARD_ROOT_EXTRA_FOLDERS += \
+    3rdmodem \
+    3rdmodemnvm \
+    3rdmodemnvmbkp \
+    modem_log \
+    sec_storage \
+    splash2 \
+    version
+
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += $(COMMON_PATH)
+
+# Verified Boot
+BOARD_AVB_ENABLE := true
+BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
+BOARD_AVB_RECOVERY_KEY_PATH := external/avb/test/data/testkey_rsa2048.pem
+BOARD_AVB_RECOVERY_ALGORITHM := SHA256_RSA2048
+BOARD_AVB_RECOVERY_ROLLBACK_INDEX := 1
+BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 1
