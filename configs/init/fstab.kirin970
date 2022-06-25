@@ -8,6 +8,8 @@ product /product ext4 ro wait,slotselect,logical,first_stage_mount
 odm /odm ext4 ro wait,slotselect,logical,first_stage_mount
 system_ext /system_ext ext4 ro wait,slotselect,logical,first_stage_mount
 
+/dev/block/platform/ff3c0000.ufs/by-name/kernel /boot auto defaults recoveryonly
+/dev/block/platform/ff3c0000.ufs/by-name/recovery_ramdisk /recovery auto defaults recoveryonly
 /dev/block/platform/ff3c0000.ufs/by-name/splash2    /splash2   ext4     rw,nosuid,nodev,noatime,data=ordered,context=u:object_r:splash2_data_file:s0 wait,nofail
 /devices/hi_mci.1/mmc_host/mmc1/*                       auto                auto      defaults                                      voldmanaged=sdcard:auto,noemulatedsd
 /devices/platform/hi_mci.1/mmc_host/mmc1/*                       auto                auto      defaults                                      voldmanaged=sdcard:auto,noemulatedsd
