@@ -19,11 +19,3 @@ system_ext /system_ext ext4 ro wait,slotselect,logical,first_stage_mount
 /dev/block/platform/ff3c0000.ufs/by-name/misc       /misc       emmc      defaults        defaults
 /dev/block/zram0             none         swap    defaults     zramsize=536870912
 /dev/block/platform/ff3c0000.ufs/by-name/hisee_fs      /mnt/hisee_fs                ext4      ro,barrier=1,context=u:object_r:hisee_data_file:s0    wait,check,notrim,nofail
-overlay     /system/product/priv-app                        overlay     ro,lowerdir=/preas/priv-app:/system/product/priv-app                                    check,nofail
-overlay     /system/product/app                             overlay     ro,lowerdir=/preas/app:/system/product/app                                              check,nofail
-overlay     /system/product/etc/default-permissions         overlay     ro,lowerdir=/preas/oversea/default-permissions:/system/product/etc/default-permissions  check,nofail
-overlay     /system/product/etc/permissions                 overlay     ro,lowerdir=/preas/oversea/permissions:/system/product/etc/permissions                  check,nofail
-overlay     /system/product/etc/preferred-apps              overlay     ro,lowerdir=/preas/oversea/preferred-apps:/system/product/etc/preferred-apps            check,nofail
-overlay     /system/product/etc/default-permissions         overlay     ro,lowerdir=/preas/china/default-permissions:/system/product/etc/default-permissions    check,nofail
-overlay     /system/product/etc/permissions                 overlay     ro,lowerdir=/preas/china/permissions:/system/product/etc/permissions                    check,nofail
-overlay     /system/product/etc/preferred-apps              overlay     ro,lowerdir=/preas/china/preferred-apps:/system/product/etc/preferred-apps              check,nofail
